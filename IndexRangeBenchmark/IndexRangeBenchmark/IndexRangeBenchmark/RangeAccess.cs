@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Collections.ObjectModel;
+using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
 
 namespace IndexRangeBenchmark;
@@ -21,7 +22,7 @@ public class RangeAccess{
     [Benchmark]
     public void Array(){
         for(var i = 0; i < count; i++){
-            _ = array[i..].Length;
+            _ = array[i..];
         }
     }
     
