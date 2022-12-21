@@ -33,4 +33,12 @@ public class RangeAccess{
             _ = span[i..];
         }
     }
+    
+    [Benchmark]
+    public void ReadOnlySpan(){
+        ReadOnlySpan<long> span = memory.Span;
+        for(var i = 0; i < count; i++){
+            _ = span[i..];
+        }
+    }
 }
